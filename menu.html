@@ -1,0 +1,101 @@
+<!-- menu.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+</head>
+<style>
+    /* General styles for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Background color for the entire page */
+    color: white; /* Default text color */
+}
+
+/* General styles for the menu */
+.menu-options {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the full screen */
+    background-color: black; /* Background color for the menu */
+    text-align: center;
+    z-index: 999;
+}
+
+/* Styling the close button */
+.close-button {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white; /* Close button color */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Styling the menu list */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px; /* Adjust margin to position the menu options */
+}
+
+.menu-list li {
+    padding: 15px 0;
+}
+
+.menu-list li a {
+    color: red; /* Link color */
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.menu-list li a:hover {
+    color: white; /* Change color on hover */
+}
+
+/* Mobile screen styles */
+@media screen and (max-width: 786px) {
+    .menu-options {
+        display: block; /* Show the menu on mobile */
+    }
+}
+
+/* Laptop screen styles */
+@media screen and (min-width: 1025px) {
+    .menu-options {
+        display: none; /* Hide the menu on larger screens */
+    }
+}
+
+</style>
+<body>
+    <header>
+        <nav class="menu-options">
+            <div class="close-button" id="close-button">&#10005;</div> <!-- Cross icon -->
+            <ul class="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="work.html">Work</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+     
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script>
+        document.getElementById('close-button').addEventListener('click', function() {
+    window.location.href = 'index.html'; // Redirect to home page
+});
+    </script>
+</body>
+</html>
